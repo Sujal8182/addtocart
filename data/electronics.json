@@ -1,0 +1,31 @@
+[
+  {
+    "id": 0,
+    "title": "MacBook Pro 16\"",
+    "category": "Laptops",
+    "imageUrl": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcREeDp7OKRg4fgjQ9hUMvEqIb7zIMLtgLKgStx4UIEpUEiWFHhXuseHR5arE4c5hgiu-Pec_BGwCJRpnsmgLwpQUAgvRLpXF-4uaHjJTSjLGjXxW_XPKnHUKg",
+    "rating": 4.8,
+    "price": 2399.99,
+    "oldPrice": 3399.99,
+    "badge": "new"
+  },
+  {
+    "id": 1,
+    "title": "iPhone 15 Pro",
+    "category": "Smartphones",
+    "imageUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-16-pro-finish-select-202409-6-3inch-blacktitanium?wid=5120&hei=2880&fmt=webp&qlt=70&.v=eUdsd0dIb3VUOXdtWkY0VFUwVE8vbEdkZHNlSjBQRklnaFB2d3I5MW94NzFzS1BRRzA4NTJUci9vckVTY21rM2lCQmV2WTA2cncybDF2YzFnKzI0S2prMCtUNWwzYWR0UVU3TWVsbEdUeXZka3Q2dVFYV2lxTm4wNXBJcGZoM1RkcERRMUVIWTBwNlRNS3dVelNTTTVB&traceId=1",
+    "rating": 4.7,
+    "price": 999.99,
+    "oldPrice": 1999.99,
+    "badge": "hot"
+  },
+ 
+  {
+    "id": 2,
+    "title": "iPad Pro 12.9\"",
+    "category": "Tablets",
+    "imageUrl": "https://m.media-amazon.com/images/I/61G6WfvA9vL.jpg",
+    "rating": 4.6,
+    "price": 1099.99
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "title": "Sony A7 Mark Iv",
+    "category": "Cameras",
+    "imageUrl": "https://www.sony.co.in/image/0273574ff7bcc3b83e178248f0831403?fmt=pjpeg&wid=1200&hei=470",
+    "price": 3399.99
+  },
+  {
+    "id": 1,
+    "title": "Gaming Headset Pro",
+    "category": "Gaming",
+    "imageUrl": "https://resource.logitech.com/content/dam/gaming/en/products/g335/g335-white-gallery-1.png",
+    "price": 299.99
+  },
+   {
+    "id": 2,
+    "title": "Apple Watch Ultra",
+    "category": "Wearables",
+    "imageUrl": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/ultra-case-unselect-gallery-1-202409_GEO_IN?wid=5120&hei=3280&fmt=p-jpg&qlt=80",
+    "rating": 4.9,
+    "price": 799.99,
+    "oldPrice": 899.99
+  }
+  
+]

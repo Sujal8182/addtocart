@@ -1,0 +1,31 @@
+[
+  {
+    "id": 0,
+    "title": "Wireless Earbuds Pro",
+    "category": "Audio",
+    "imageUrl": "https://www.corseca.in/cdn/shop/files/Listing-1_6452ec0d-5fdb-460b-b071-4de4b0c0f105.png?v=1727951475",
+    "rating": 4.9,
+    "price": 149.99,
+    "oldPrice": 199.99,
+    "badge": "sale"
+  },
+  {
+    "id": 1,
+    "title": "Gaming Headset Pro",
+    "category": "Gaming",
+    "imageUrl": "https://resource.logitech.com/content/dam/gaming/en/products/g335/g335-white-gallery-1.png",
+    "rating": 4.9,
+    "price": 299.99,
+    "badge": "new"
+  },
+  {
+    "id": 2,
+    "title": "Portable Bluetooth Speaker",
+    "category": "Audio",
+    "imageUrl": "https://avstore.in/cdn/shop/files/1.AVStore-JBL-PartyBox-Encore-Essential-Portable-Bluetooth-Speaker-With-Light-Display-Front-Angled-View-Hero.jpg?v=1682414405",
+    "rating": 4.5,
+    "price": 79.99,
+    "oldPrice": 99.99,
+    "badge": "sale"
+  }
+]

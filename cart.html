@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - TechHub</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="main-navbar">
+        <div class="container">
+            <div class="nav-content" id="nav-content">
+                <div class="logo" id="site-logo">
+                    <h2>TechHub</h2>
+                </div>
+                <div class="nav-links" id="navigation-links">
+                    <a href="electronics.html" id="electronics-link">Electronics</a>
+                    <a href="audio-gaming.html" id="audio-gaming-link">Audio & Gaming</a>
+                    <a href="photography-fitness.html" id="photography-fitness-link">Photography & Fitness</a>
+                    <a href="cart.html" class="cart-btn active" id="cart-link">
+                        <i class="fas fa-shopping-cart"></i>
+                        Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb" id="breadcrumb-section">
+        <div class="container">
+            <div class="breadcrumb-nav" id="breadcrumb-navigation">
+                <a href="electronics.html" id="home-breadcrumb">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <i class="fas fa-chevron-right"></i>
+                <span id="current-page-breadcrumb">Shopping Cart</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <section class="cart-section" id="main-cart-section">
+        <div class="container">
+            <h1 class="page-title" id="cart-page-title">Shopping Cart</h1>
+            <div class="cart-layout" id="cart-main-layout">
+                <!-- Cart Items -->
+                <div class="cart-items" id="cart-items-container">
+                    <div class="cart-header" id="cart-items-header">
+                            <h2 id="cart-items-title">Your Items (<span id="total-items-count"></span>)</h2>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary" id="cart-summary-container">
+                    <div class="summary-card" id="order-summary-card">
+                        <h3 id="summary-title">Order Summary</h3>
+                        <div class="summary-row" id="subtotal-row">
+                            <span id="subtotal-label">Subtotal (<span id="summary-item-count">4</span> items)</span>
+                            <span id="subtotal-amount">$4,349.96</span>
+                        </div>
+                        <div class="summary-row" id="shipping-row">
+                            <span id="shipping-label">Shipping</span>
+                            <span class="free" id="shipping-amount">Free</span>
+                        </div>
+                        <div class="summary-row" id="tax-row">
+                            <span id="tax-label">Tax</span>
+                            <span id="tax-amount">$347.99</span>
+                        </div>
+                        <div class="summary-divider" id="summary-divider"></div>
+                        <div class="summary-row total" id="total-row">
+                            <span id="total-label">Total</span>
+                            <span id="total-amount">$4,697.95</span>
+                        </div>
+                        <div class="promo-code" id="promo-code-section">
+                            <input type="text" placeholder="Enter promo code" id="promo-code-input">
+                            <button class="apply-btn" id="apply-promo-btn">Apply</button>
+                        </div>
+                        <button class="checkout-btn" id="checkout-button">
+                            <i class="fas fa-lock"></i>
+                            Proceed to Checkout
+                        </button>
+                        <div class="payment-methods" id="payment-methods-section">
+                            <p id="payment-methods-text">We accept:</p>
+                            <div class="payment-icons" id="payment-icons-container">
+                                <i class="fab fa-cc-visa" id="visa-icon"></i>
+                                <i class="fab fa-cc-mastercard" id="mastercard-icon"></i>
+                                <i class="fab fa-cc-paypal" id="paypal-icon"></i>
+                                <i class="fab fa-apple-pay" id="apple-pay-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="continue-shopping" id="continue-shopping-section">
+                <a href="electronics.html" class="continue-btn" id="continue-shopping-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Continue Shopping
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let allproduct = JSON.parse(localStorage.getItem("allproduct"))
+        let container = document.getElementById("cart-items-container")
+        let key = 0
+        allproduct.forEach(e => {
+            
+            container.innerHTML += `
+                        <!-- Cart Item 1 -->
+                        <div class="cart-item" id="cart-item-${key}">
+                            <div class="item-image" id="item-image-0">
+                                <img src="${e.imageUrl}" alt="Wireless Earbuds Pro" id="item-img-0">
+                            </div>
+                            <div class="item-details" id="item-details-0">
+                                <h3 id="item-title-0">${e.title}</h3>
+                                <p class="item-category" id="item-category-0">${e.category}</p>
+                                <div class="item-rating" id="item-rating-0">
+                                    <div class="stars" id="item-stars-0">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span id="item-rating-text-0">(${e.rating})</span>
+                                </div>
+                            </div>
+                            <div class="item-quantity" id="item-quantity-section-0">
+                                <label id="qty-label-0">Qty:</label>
+                                <div class="quantity-controls" id="qty-controls-0">
+                                    <button class="qty-btn minus" onclick="decrement(${key},${e.price},${e.id})" id="decrease-btn-0">-</button>
+                                    <input id="quantity${key}" value="1" min="1" readonly>
+                                    <button class="qty-btn plus" onclick="increment(${key},${e.price})" id="increase-btn-0">+</button>
+                                </div>
+                            </div>
+                            <div class="item-price" id="item-price-section-0">
+                                <span class="current-price" id="price${key}">${e.price}</span>
+                            </div>
+                            <div class="item-actions" id="item-actions-0">
+                                <button class="remove-btn" id="remove-btn-${key}" onclick="removeitem(${key},${e.id})">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+    
+            `
+            key++
+        });
+        
+        let count = document.getElementById("total-items-count")
+        let subtotalcount = document.getElementById("summary-item-count")
+        subtotalis = allproduct.length
+        subtotalcount.innerText = subtotalis
+        count.innerText = allproduct.length
+        function removeitem(key,id){
+            let item = document.getElementById(`cart-item-${key}`)
+            item.style.display = "none"
+            item.innerHTML = ''
+            allproduct = allproduct.filter(item => item.id != key)
+            localStorage.setItem("allproduct", JSON.stringify(allproduct));
+            count.innerText = allproduct.length
+        }
+        function increment(key,price){
+            let quantity = document.getElementById(`quantity${key}`)
+            quantity.value++
+            let quantityv = document.getElementById(`quantity${key}`).value
+            let pricechangev = document.getElementById(`price${key}`)
+            pricechangev.innerText = quantityv * price
+            let t = pricechangev.innerText = Math.round(quantityv * price)
+            subtotalis++
+            subtotalcount = subtotalis
+
+            totalsum()            
+        }
+        function decrement(key,price,id){
+            let quantity = document.getElementById(`quantity${key}`)
+            if(quantity.value > 1){
+                
+                quantity.value--
+                let quantityv = document.getElementById(`quantity${key}`).value
+                
+                let pricechangev = document.getElementById(`price${key}`)
+                pricechangev.innerText = Math.round(quantityv * price)
+    
+                let t = pricechangev.innerText = quantityv * price
+                total += t
+                subtotalis--
+                subtotalcount = subtotalis
+
+            }else{
+                removeitem(key,id)
+                totalsum()
+            }    
+        }
+        function totalsum(){
+            let total = 1 ;
+            let taxa = document.getElementById("tax-amount")
+            let final = document.getElementById("total-amount")
+            allproduct.forEach((e,i)=>{
+                let value = document.getElementById(`price${i}`)
+                let totalvalue = parseInt(Math.round(value.innerText))
+                total += totalvalue
+                let totalfigure = document.getElementById("subtotal-amount")
+                totalfigure.innerText = `$`+ total
+                let taxablea = Math.round(total*3/100)
+                taxa.innerText =`$`+ taxablea
+                final.innerText = '$' +Math.round(taxablea + total) 
+
+            })
+        }
+        totalsum()
+    </script>
+</body>
+</html>
